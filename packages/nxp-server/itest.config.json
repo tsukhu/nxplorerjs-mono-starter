@@ -1,0 +1,9 @@
+{
+  "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+  "testResultsProcessor": "jest-sonar-reporter",
+  "transform": {
+    "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
+  },
+  "testMatch": ["**/src/**/*.itest.(ts)"],
+  "testEnvironment": "node"
+}

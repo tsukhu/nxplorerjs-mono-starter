@@ -2,27 +2,42 @@
   "name": "@nxp/nxp-server",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.module.json",
     "clean": "rimraf lib",
-    "prepare": "yarn run clean && yarn run build"
+    "prepare": "yarn run clean && yarn run build",
+    "compile": "cross-env NODE_ENV=production node build.js && webpack --config webpack.config.js",
+    "compile:dev": "cross-env NODE_ENV=development node build.js && webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development node build.js && backpack dev",
+    "dev:debug": "cross-env NODE_ENV=development node build.js && cross-env DEBUG=express:* backpack dev",
+    "dash": "nodejs-dashboard -- node -r nodejs-dashboard build/main",
+    "test": "cross-env NODE_ENV=test node build.js && npm run lint && jest --forceExit --config unit.config.json",
+    "test:dev": "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
+    "lint": "npm run tslint -- -o reports/lint_issues.json -t json --force \"server/**/*.ts\" ",
+    "lint:console": "npm run tslint -- --force \"server/**/*.ts\" ",
+    "tslint": "tslint",
+    "wait-port": "wait-port"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@nxp/nxp-core": "^1.0.0",
-    "dotenv": "^6.0.0"
+    "dotenv": "^6.0.0",
+    "reflect-metadata": "^0.1.12"
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
-    "backpack-core": "^0.7.0",
+    "awesome-typescript-loader": "^5.2.0",
     "concurrently": "^3.6.1",
     "cross-env": "^5.2.0",
     "shelljs": "^0.8.2",
+    "ts-node": "^7.0.0",
     "typedoc": "^0.11.1",
-    "typedoc-webpack-plugin": "^1.1.4"
+    "typedoc-webpack-plugin": "^1.1.4",
+    "webpack": "^4.16.2",
+    "webpack-command": "^0.4.1"
   }
 }
