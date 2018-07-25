@@ -21,6 +21,8 @@
     "compression": "^1.7.3",
     "cookie-parser": "^1.4.3",
     "csurf": "^1.9.0",
+    "express": "^4.16.3",
+    "express-partial-response": "^0.3.4",
     "express-physical": "^0.5.2",
     "helmet": "^3.13.0",
     "inversify": "^4.13.0",

@@ -6,14 +6,14 @@ const UUID = 'UUID';
  * Add Logging configuration to the app server
  * @param app Express applicatton
  */
-export const configLogging = (Logger: ILogger, app: Application) => {
+export const configLogging = (app: Application, logger: ILogger, ) => {
   app.use((req: any, res, next) => {
     // If UUID set in the cookie then add to the log for tracking
     if (req.cookies[UUID] !== undefined) {
-      Logger.setUUID(req.cookies[UUID]);
+      logger.setUUID(req.cookies[UUID]);
     } else {
       // unset previously set value if any
-      Logger.setUUID(undefined);
+      logger.setUUID(undefined);
     }
     next();
   });

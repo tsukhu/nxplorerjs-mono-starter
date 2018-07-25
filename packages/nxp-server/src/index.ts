@@ -1,6 +1,6 @@
-import { createContainer } from '@nxp/nxp-core';
+// import { ExpressServer } from '@nxp/nxp-core';
 
 export function cli() {
-  createContainer();
+  // const server: ExpressServer = new ExpressServer;
   return Promise.resolve(true);
 }
