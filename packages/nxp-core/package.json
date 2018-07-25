@@ -1,0 +1,16 @@
+{
+  "name": "@nxp/nxp-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.module.json",
+    "clean": "rimraf lib",
+    "prepare": "yarn run clean && yarn run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {}
+}
