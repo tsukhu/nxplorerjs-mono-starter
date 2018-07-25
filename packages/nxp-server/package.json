@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.module.json",
     "clean": "rimraf lib",
-    "prepare": "yarn run clean && yarn run build",
+    "prepare": "yarn run compile",
     "compile": "cross-env NODE_ENV=production node build.js && webpack --config webpack.config.js",
     "compile:dev": "cross-env NODE_ENV=development node build.js && webpack --config webpack.config.js",
     "dev": "cross-env NODE_ENV=development node build.js && backpack dev",
