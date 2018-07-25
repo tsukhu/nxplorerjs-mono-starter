@@ -6,7 +6,10 @@
     "bootstrap": "lerna bootstrap",
     "test": "lerna run test",
     "prepare": "lerna run prepare",
-    "clean": "rimraf packages/**/lib"
+    "clean": "rimraf packages/**/lib",
+    "prettier:base": "prettier --parser typescript --single-quote",
+    "prettier:check": "npm run prettier:base -- --list-different \"packages/**/*.{ts,tsx}\"",
+    "prettier:write": "npm run prettier:base -- --write \"packages/**/*.{ts,tsx}\""
   },
   "peerDependencies": {
     "graphql": "^0.13.2 || ^14.0.0-rc.2"

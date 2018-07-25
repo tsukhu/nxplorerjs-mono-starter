@@ -1,6 +1,6 @@
-import { awesomeFn } from '@nxp/nxp-core';
+import { createContainer } from '@nxp/nxp-core';
 
 export function cli() {
-  awesomeFn();
+  createContainer();
   return Promise.resolve(true);
 }

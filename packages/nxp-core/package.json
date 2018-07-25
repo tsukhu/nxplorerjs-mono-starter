@@ -12,5 +12,22 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/compression": "^0.0.36",
+    "@types/express": "^4.16.0"
+  },
+  "dependencies": {
+    "brakes": "^2.6.0",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "express-physical": "^0.5.2",
+    "helmet": "^3.13.0",
+    "inversify": "^4.13.0",
+    "inversify-express-utils": "^6.1.0",
+    "prom-client": "^11.1.1",
+    "swagger-express-middleware": "1.0.0-alpha.12",
+    "swagger-ui-express": "^3.0.10",
+    "yamljs": "^0.3.0"
+  }
 }
