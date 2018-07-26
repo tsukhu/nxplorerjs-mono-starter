@@ -1,15 +1,22 @@
 {
-  "workspaces": [
-    "packages/*"
-  ],
+  "name": "nxplorerjs-micro-starter",
+  "version": "1.0.0",
+  "description": "Express Microservice Starter Mono Repo",
+  "main": "index.js",
+  "author": "Tarun Kumar Sukhu <tksukhu@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"],
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "test": "lerna run test",
     "prepare": "lerna run prepare",
     "clean": "lerna run clean",
     "prettier:base": "prettier --parser typescript --single-quote",
-    "prettier:check": "npm run prettier:base -- --list-different \"packages/**/*.{ts,tsx}\"",
-    "prettier:write": "npm run prettier:base -- --write \"packages/**/*.{ts,tsx}\""
+    "prettier:check":
+      "npm run prettier:base -- --list-different \"packages/**/*.{ts,tsx}\"",
+    "prettier:write":
+      "npm run prettier:base -- --write \"packages/**/*.{ts,tsx}\""
   },
   "devDependencies": {
     "awesome-typescript-loader": "4.0.1",
@@ -23,12 +30,5 @@
     "typedoc": "^0.11.1",
     "typedoc-webpack-plugin": "^1.1.4",
     "typescript": "^2.9.2"
-  },
-  "name": "nxplorerjs-micro-starter",
-  "version": "1.0.0",
-  "description": "Express Microservice Starter Mono Repo",
-  "main": "index.js",
-  "author": "Tarun Kumar Sukhu <tksukhu@gmail.com>",
-  "license": "MIT",
-  "private": true
+  }
 }
