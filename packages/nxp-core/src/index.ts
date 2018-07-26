@@ -7,3 +7,7 @@ export { configHealthChecks } from './healthchecks';
 export { addCompression } from './compression';
 export { createContainer } from './container';
 export { ExpressServer } from './server';
+export { SERVICE_IDENTIFIER } from './constants/identifiers';
+export { ILogger, IMetrics, ISecurity, JWT_KeyType } from './interfaces';
+export { authMiddleware } from './middleware/auth-middleware';
+export { IDGenerator } from './utils';

@@ -1,5 +1,5 @@
 const s = require('shelljs');
- 
+
 s.rm('-rf', 'build');
 s.rm('-rf', 'reports');
 s.mkdir('build');
@@ -11,5 +11,5 @@ s.cp('jwtRS256.key', 'build/');
 s.cp('jwtRS256.key.pub', 'build/');
 s.cp('-R', 'public', 'build/public');
 // s.cp('-R', 'src/graphql/schema', 'build/graphql');
-s.mkdir('-p', 'build/swagger');
-s.cp('src/swagger/Api.yaml', 'build/swagger/Api.yaml');
+s.mkdir('-p', 'build/src/swagger');
+s.cp('src/swagger/Api.yaml', 'build/src/swagger/Api.yaml');

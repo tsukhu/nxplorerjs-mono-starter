@@ -1,10 +1,56 @@
-// import { ExpressServer } from '@nxp/nxp-core';
+import 'source-map-support/register';
 import './env';
+import {
+  ExpressServer,
+  SERVICE_IDENTIFIER,
+  ILogger,
+  configHystrix
+} from '@nxp/nxp-core';
+import { setupContainer } from './config/ioc_config';
+import * as path from 'path';
+import * as os from 'os';
+import * as http from 'http';
 
-export function cli() {
-  // const server: ExpressServer = new ExpressServer;
-  console.log('hello');
-  return Promise.resolve(true);
-}
+// Single Node execution
+// tslint:disable:no-console
+const welcome = port =>
+  console.log(
+    `up and running in ${process.env.NODE_ENV ||
+      'development'} @: ${os.hostname()} on port: ${port}`
+  );
 
-cli();
+export const setupServer = () => {
+  // create server
+  const container = setupContainer();
+  const logger = container.get<ILogger>(SERVICE_IDENTIFIER.LOGGER);
+  const app = new ExpressServer(
+    container,
+    logger,
+    path.join('./src/swagger', 'Api.yaml')
+  )
+    .getServer()
+    .build();
+  //  const apolloServer: ApolloServer = configGraphQL(app);
+  // Create Server so that it can be reused for the
+  // configuring the SubscriptionServer
+  const ws = http.createServer(app);
+
+  // if (process.env.GRAPHQL_SUBSCRIPTIONS === 'true') {
+  //  apolloServer.installSubscriptionHandlers(ws);
+  // }
+  // console.log(apolloServer.subscriptionsPath);
+  ws.listen(process.env.PORT, err => {
+    if (err) {
+      throw new Error(err);
+    }
+
+    if (process.env.STREAM_HYSTRIX === 'true') {
+      // configure Hystrix Support
+      configHystrix();
+    }
+
+    welcome(process.env.PORT);
+  });
+};
+
+setupServer();

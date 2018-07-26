@@ -1,6 +1,6 @@
 import { BaseMiddleware } from 'inversify-express-utils';
 import { Request, Response, NextFunction } from 'express';
-import SERVICE_IDENTIFIER from '../constants/identifiers';
+import { SERVICE_IDENTIFIER } from '../constants/identifiers';
 import ILogger from '../interfaces/ilogger';
 import { inject, injectable } from 'inversify';
 

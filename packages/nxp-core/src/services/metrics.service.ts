@@ -2,14 +2,14 @@ import { Request, Response } from 'express';
 import { injectable } from 'inversify';
 import IMetrics from '../interfaces/imetrics';
 
-const Prometheus = require('prom-client');
+import * as Prometheus from 'prom-client';
 
 const httpRequestDurationMicroseconds = new Prometheus.Summary({
   name: 'http_request_duration_ms',
   help: 'Duration of HTTP requests in ms',
-  labelNames: ['route', 'statusCode'],
+  labelNames: ['route', 'statusCode']
   // buckets for response time from 0.1ms to 500ms
-  buckets: [0.1, 5, 15, 50, 100, 200, 300, 400, 500]
+  // buckets: [0.1, 5, 15, 50, 100, 200, 300, 400, 500]
 });
 
 /**
@@ -24,10 +24,10 @@ class MetricsService implements IMetrics {
     // Add that the metrics being logged for the URL
     if (responseTime) {
       httpRequestDurationMicroseconds
-        .labels(fullUrl, statusCode)
+        .labels(fullUrl)
         .observe(Number(responseTime));
     } else {
-      httpRequestDurationMicroseconds.labels(fullUrl, statusCode);
+      httpRequestDurationMicroseconds.labels(fullUrl);
     }
   }
 }

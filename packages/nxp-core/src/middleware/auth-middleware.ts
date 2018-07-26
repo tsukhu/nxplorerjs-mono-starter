@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as fs from 'fs';
-const expressJwt = require('express-jwt');
+import * as expressJwt from 'express-jwt';
 import { User } from '../models/security.model';
 
 /**

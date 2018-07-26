@@ -6,21 +6,22 @@
     "bootstrap": "lerna bootstrap",
     "test": "lerna run test",
     "prepare": "lerna run prepare",
-    "clean": "rimraf packages/**/lib",
+    "clean": "lerna run clean",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"packages/**/*.{ts,tsx}\"",
     "prettier:write": "npm run prettier:base -- --write \"packages/**/*.{ts,tsx}\""
   },
-  "peerDependencies": {
-    "graphql": "^0.13.2 || ^14.0.0-rc.2"
-  },
   "devDependencies": {
+    "awesome-typescript-loader": "4.0.1",
+    "backpack-core": "^0.7.0",
     "lerna": "^2.11.0",
     "prettier": "^1.13.7",
-    "tslint": "^5.10.0",
     "rimraf": "^2.6.2",
+    "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.14.0",
     "tslint-config-standard": "^7.0.0",
+    "typedoc": "^0.11.1",
+    "typedoc-webpack-plugin": "^1.1.4",
     "typescript": "^2.9.2"
   },
   "name": "nxplorerjs-micro-starter",

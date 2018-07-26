@@ -4,7 +4,7 @@ import { Container } from 'inversify';
 import { LogService, MetricsService, SecurityService } from './services';
 import { ILogger, IMetrics, ISecurity } from './interfaces';
 import LoggerMiddleware from './middleware/logger-middleware';
-import SERVICE_IDENTIFIER from './constants/identifiers';
+import { SERVICE_IDENTIFIER } from './constants/identifiers';
 
 export const createContainer = (): Container => {
   // Initialize the container

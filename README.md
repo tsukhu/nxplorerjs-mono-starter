@@ -5,7 +5,3 @@ This is a mono repo version of the [nxplorer js microservice project](https://gi
 ## Status
 
 - Work in progress
-
-## Credits
-
-The mono repo structure is based on the typescript [yarn and lerna workspace example](https://github.com/Quramy/lerna-yarn-workspaces-example).

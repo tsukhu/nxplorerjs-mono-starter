@@ -2,7 +2,9 @@ import { Request, Response } from 'express';
 import { injectable } from 'inversify';
 
 import ILogger from '../interfaces/ilogger';
-const pino = require('pino')();
+import * as pino from 'pino';
+
+const nxpLogger = pino();
 
 /**
  * Logging Facade that wraps the Pino logger implementation
@@ -81,7 +83,7 @@ class LogService implements ILogger {
   }
 
   private initLogger() {
-    this.logger = pino;
+    this.logger = nxpLogger;
   }
 }
 

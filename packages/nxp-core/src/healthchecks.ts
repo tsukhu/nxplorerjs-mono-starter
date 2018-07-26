@@ -1,6 +1,6 @@
 import { Application } from 'express';
-const physical = require('express-physical');
-const v8 = require('v8');
+import * as physical from 'express-physical';
+import * as v8 from 'v8';
 
 // Sync healthcheck
 

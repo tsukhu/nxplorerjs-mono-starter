@@ -13,7 +13,7 @@ import ILogger from './interfaces/ilogger';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import { Container } from 'inversify';
 
-const responseTime = require('response-time');
+import * as responseTime from 'response-time';
 
 /**
  * Node Express Server setup and configuration

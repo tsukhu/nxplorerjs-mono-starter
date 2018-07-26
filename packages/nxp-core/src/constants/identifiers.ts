@@ -1,4 +1,4 @@
-const SERVICE_IDENTIFIER = {
+export const SERVICE_IDENTIFIER = {
   LOGGER: Symbol.for('Logger'),
   METRICS: Symbol.for('Metrics'),
   SECURITY: Symbol.for('Security'),
@@ -6,4 +6,3 @@ const SERVICE_IDENTIFIER = {
   LOGGER_MIDDLEWARE: Symbol.for('LoggerMiddleware')
 };
 
-export default SERVICE_IDENTIFIER;
