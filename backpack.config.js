@@ -32,6 +32,8 @@ module.exports = {
             includeDeclarations: false,
             ignoreCompilerErrors: true,
             excludePrivate: true,
+            sourceMap: true,
+            skipLibCheck: true,
             lib: ['lib.esnext.full.d.ts', 'lib.esnext.asynciterable.d.ts']
           },
           ['./src']

@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as fs from 'fs';
 import * as expressJwt from 'express-jwt';
-import { User } from '../models/security.model';
+import User from '../models/security.model';
 
 /**
  * JWT Authentication middleware from the REST APIs
@@ -64,7 +64,7 @@ const authGraphQLMiddlewareFactory = () => {
   };
 };
 
-export const checkUser = async (user: any): Promise<any> => {
+const checkUser = async (user: any): Promise<any> => {
   if (user.role !== undefined && 'ADMIN' === user.role) {
     return Promise.resolve(user);
   } else {
@@ -72,7 +72,7 @@ export const checkUser = async (user: any): Promise<any> => {
   }
 };
 
-export const getUserRole = ctx => {
+const getUserRole = ctx => {
   if (process.env.JWT_AUTH === 'true') {
     return Promise.resolve(
       ctx.user && ctx.user.role ? ctx.user.role : 'UNKNOWN'
@@ -88,7 +88,7 @@ export const getUserRole = ctx => {
  * This functional validates the user information and role
  * @param ctx
  */
-export const getAuthenticatedUser = ctx => {
+const getAuthenticatedUser = ctx => {
   if (process.env.JWT_AUTH === 'true') {
     return checkUser(ctx.user);
   } else {
@@ -98,4 +98,10 @@ export const getAuthenticatedUser = ctx => {
 
 const authMiddleware = authMiddlewareFactory();
 const graphQLAuthMiddleware = authGraphQLMiddlewareFactory();
-export { authMiddleware, graphQLAuthMiddleware };
+export {
+  authMiddleware,
+  graphQLAuthMiddleware,
+  getAuthenticatedUser,
+  getUserRole,
+  checkUser
+};

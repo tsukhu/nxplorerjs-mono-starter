@@ -1,9 +1,11 @@
 /**
  * Logged in User Information
  */
-export interface User {
+interface User {
   id: any;
   role: string;
   email: string;
   jwt: string;
 }
+
+export default User;

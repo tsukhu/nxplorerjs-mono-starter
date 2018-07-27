@@ -4,9 +4,12 @@ import {
   ExpressServer,
   SERVICE_IDENTIFIER,
   ILogger,
-  configHystrix
+  configHystrix,
+  createApolloServer
 } from '@nxp/nxp-core';
-import { setupContainer } from './config/ioc_config';
+import { ApolloServer, Config } from 'apollo-server-express';
+import { getGraphQLConfig } from './config/graphql';
+import { IOCContainer } from './config/ioc-container';
 import * as path from 'path';
 import * as os from 'os';
 import * as http from 'http';
@@ -21,7 +24,7 @@ const welcome = port =>
 
 export const setupServer = () => {
   // create server
-  const container = setupContainer();
+  const container = IOCContainer.getInstance().getContainer();
   const logger = container.get<ILogger>(SERVICE_IDENTIFIER.LOGGER);
   const app = new ExpressServer(
     container,
@@ -30,14 +33,15 @@ export const setupServer = () => {
   )
     .getServer()
     .build();
-  //  const apolloServer: ApolloServer = configGraphQL(app);
+  const graphqlConfig: Config = getGraphQLConfig();
+  const apolloServer: ApolloServer = createApolloServer(app, graphqlConfig);
   // Create Server so that it can be reused for the
   // configuring the SubscriptionServer
   const ws = http.createServer(app);
 
-  // if (process.env.GRAPHQL_SUBSCRIPTIONS === 'true') {
-  //  apolloServer.installSubscriptionHandlers(ws);
-  // }
+  if (process.env.GRAPHQL_SUBSCRIPTIONS === 'true') {
+    apolloServer.installSubscriptionHandlers(ws);
+  }
   // console.log(apolloServer.subscriptionsPath);
   ws.listen(process.env.PORT, err => {
     if (err) {

@@ -17,6 +17,8 @@
     "@types/express": "^4.16.0"
   },
   "dependencies": {
+    "apollo-server": "2.1.0-alpha.8",
+    "apollo-server-express": "2.1.0-alpha.8",
     "brakes": "^2.6.0",
     "compression": "^1.7.3",
     "cookie-parser": "^1.4.3",

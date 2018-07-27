@@ -8,11 +8,12 @@
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "test": "lerna run test",
-    "start": "lerna run start",
-    "prepare": "lerna run prepare",
-    "clean": "lerna run clean",
+    "bootstrap": "lerna bootstrap --stream",
+    "test": "lerna run test --stream",
+    "itest": "lerna run itest --stream",
+    "start": "lerna run start --stream",
+    "prepare": "lerna run prepare --stream",
+    "clean": "lerna run clean --stream",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check":
       "npm run prettier:base -- --list-different \"packages/**/*.{ts,tsx}\"",
