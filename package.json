@@ -10,13 +10,17 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "test": "lerna run test",
+    "start": "lerna run start",
     "prepare": "lerna run prepare",
     "clean": "lerna run clean",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check":
       "npm run prettier:base -- --list-different \"packages/**/*.{ts,tsx}\"",
     "prettier:write":
-      "npm run prettier:base -- --write \"packages/**/*.{ts,tsx}\""
+      "npm run prettier:base -- --write \"packages/**/*.{ts,tsx}\"",
+    "lint":
+      "npm run tslint -- --force \"packages/**/*.{ts,tsx}\" -e \"**/lib/**\" -e \"**/build/**\"",
+    "tslint": "tslint"
   },
   "devDependencies": {
     "awesome-typescript-loader": "4.0.1",

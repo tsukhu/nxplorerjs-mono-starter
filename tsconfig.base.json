@@ -24,10 +24,5 @@
       "esnext.asynciterable"
     ]
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "server/**/*.spec.ts",
-    "server/**/*.e2e.ts"
-  ]
+  "exclude": ["node_modules", "build", "src/**/*.spec.ts", "src/**/*.e2e.ts"]
 }

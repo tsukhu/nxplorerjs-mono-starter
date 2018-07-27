@@ -8,7 +8,13 @@ import {
   response
 } from 'inversify-express-utils';
 import * as jwt from 'jsonwebtoken';
-import { ILogger, ISecurity, JWT_KeyType ,SERVICE_IDENTIFIER, IDGenerator } from '@nxp/nxp-core';
+import {
+  ILogger,
+  ISecurity,
+  JWT_KeyType,
+  SERVICE_IDENTIFIER,
+  IDGenerator
+} from '@nxp/nxp-core';
 import { HttpStatus } from '../../services';
 
 /**

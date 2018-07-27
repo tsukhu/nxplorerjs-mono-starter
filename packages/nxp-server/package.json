@@ -8,15 +8,21 @@
     "clean": "rimraf build",
     "prepare": "yarn run compile",
     "compile": "cross-env NODE_ENV=production node build.js && backpack build",
-    "compile:dev": "cross-env NODE_ENV=development node build.js && backpack build",
-    "dev": "cross-env NODE_ENV=development node build.js && backpack dev",
-    "dev:debug": "cross-env NODE_ENV=development node build.js && cross-env DEBUG=express:* backpack dev",
+    "compile:dev":
+      "cross-env NODE_ENV=development node build.js && backpack build",
+    "start": "cross-env NODE_ENV=development node build.js && backpack dev",
+    "dev:debug":
+      "cross-env NODE_ENV=development node build.js && cross-env DEBUG=express:* backpack dev",
     "dash": "nodejs-dashboard -- node -r nodejs-dashboard build/main",
-    "test": "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
-    "test:dev": "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
-    "lint": "npm run tslint -- -o reports/lint_issues.json -t json --force \"server/**/*.ts\" ",
-    "lint:console": "npm run tslint -- --force \"server/**/*.ts\" ",
-    "tslint": "tslint",
+    "test":
+      "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
+    "test:dev":
+      "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
+    "itest:build":
+      "cross-env NODE_ENV=test node build.js && cross-env NODE_ENV=test backpack build",
+    "itest:run":
+      "concurrent --kill-others --success first \"cd build && node main\" \"wait-port localhost:3000 && jest --forceExit --config itest.config.json\"",
+    "itest": "yarn itest:build && yarn itest:run",
     "wait-port": "wait-port"
   },
   "keywords": [],

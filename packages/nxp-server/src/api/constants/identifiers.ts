@@ -4,4 +4,3 @@ export const APP_SERVICE_IDENTIFIER = {
   PRODUCT: Symbol.for('Product'),
   USER: Symbol.for('User')
 };
-

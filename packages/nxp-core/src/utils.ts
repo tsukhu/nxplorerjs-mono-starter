@@ -7,4 +7,3 @@ export const IDGenerator = (): string => {
       .substr(2, 9)
   );
 };
-

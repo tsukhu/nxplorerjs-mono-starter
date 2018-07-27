@@ -1,7 +1,8 @@
 import { Application } from 'express';
-import * as Prometheus from 'prom-client';
 
 // Init
+const Prometheus = require('prom-client');
+
 const prometheusMetrics = Prometheus.collectDefaultMetrics;
 
 // Probe every 5th second.

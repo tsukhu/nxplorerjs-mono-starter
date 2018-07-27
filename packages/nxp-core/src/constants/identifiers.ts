@@ -5,4 +5,3 @@ export const SERVICE_IDENTIFIER = {
   HYSTRIX: Symbol.for('Hystrix'),
   LOGGER_MIDDLEWARE: Symbol.for('LoggerMiddleware')
 };
-
