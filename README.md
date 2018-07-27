@@ -50,3 +50,9 @@ yarn itest
 ```bash
 yarn workspace <workspace name> add <package>
 ```
+
+- Example of adding node-fetch to @nxp/nxp-server
+
+```bash
+yarn workspace @nxp/nxp-server add node-fetch
+```
