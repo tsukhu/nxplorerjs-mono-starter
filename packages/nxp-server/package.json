@@ -24,7 +24,8 @@
     "itest:run":
       "concurrent --kill-others --success first \"cd build && node main\" \"wait-port localhost:3000 && jest --forceExit --config itest.config.json\"",
     "itest": "yarn itest:build && yarn itest:run",
-    "wait-port": "wait-port"
+    "wait-port": "wait-port",
+    "jest": "jest --config unit.config.json"
   },
   "keywords": [],
   "author": "",

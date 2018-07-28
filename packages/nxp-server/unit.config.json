@@ -8,6 +8,7 @@
   "collectCoverage": true,
   "collectCoverageFrom": [
     "**/src/**/*.{ts}",
+    "!**/src/**/*.itest.{ts}",
     "!**/node_modules/**",
     "!**/build/**"
   ]
