@@ -9,10 +9,10 @@ This is a mono repo version of the [nxplorer js microservice project](https://gi
 
 ## Workspaces
 
-- @nxp/nxp-core (Core Platform)
+- **@nxp/nxp-core** (Core Platform)
   - The platform module which does all the configuration and setup of the server express server and GraphQL server
   - It also configures the platform components like logging, monitoring, security , IOC container
-- @nxp/nxp-server (Application)
+- **@nxp/nxp-server** (Application)
   - This depends on @nxp/nxp-core for all the platform requirements
   - Sets up the REST APIS, Application Services and GraphQL business API implementation
 
