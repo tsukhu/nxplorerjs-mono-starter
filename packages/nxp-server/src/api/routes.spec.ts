@@ -1,11 +1,6 @@
 import * as request from 'supertest';
 import '../env';
-import {
-  ExpressServer,
-  SERVICE_IDENTIFIER,
-  ILogger,
-  configHystrix
-} from '@nxp/nxp-core';
+import { ExpressServer, SERVICE_IDENTIFIER, ILogger } from '@nxp/nxp-core';
 import { IOCContainer } from '../config/ioc-container';
 import * as path from 'path';
 

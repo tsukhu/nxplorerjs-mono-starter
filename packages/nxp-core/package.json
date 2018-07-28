@@ -27,7 +27,6 @@
     "express-jwt": "^5.3.1",
     "express-partial-response": "^0.3.4",
     "express-physical": "^0.5.2",
-    "express-pino-logger": "^3.0.2",
     "helmet": "^3.13.0",
     "inversify": "^4.13.0",
     "inversify-express-utils": "^6.1.0",

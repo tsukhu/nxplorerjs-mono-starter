@@ -2737,12 +2737,6 @@ express-physical@^0.5.2:
     snakecase-keys "^1.1.0"
     spected "^0.7.0"
 
-express-pino-logger@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/express-pino-logger/-/express-pino-logger-3.0.2.tgz#6384763e492a246dfbe795f9380a7234f300acc1"
-  dependencies:
-    pino-http "^3.0.1"
-
 express-unless@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/express-unless/-/express-unless-0.3.1.tgz#2557c146e75beb903e2d247f9b5ba01452696e20"
@@ -5541,22 +5535,11 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-pino-http@^3.0.1:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/pino-http/-/pino-http-3.2.2.tgz#c4ea2d6f14b6f496c956b0687bc5fb36462c1a43"
-  dependencies:
-    pino "^4.10.2"
-    pino-std-serializers "^1.0.0"
-
-pino-std-serializers@^1.0.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-1.2.0.tgz#ae5525560bb99b9a84661e809941a3cee796a725"
-
 pino-std-serializers@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-2.1.0.tgz#01953dcaecd5f43b331ecf2e312a49c9fd64851c"
 
-pino@^4.10.2, pino@^4.17.5:
+pino@^4.17.5:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/pino/-/pino-4.17.5.tgz#771e7b94acf09082c1063bc5a91edc59a5503dc4"
   dependencies:
