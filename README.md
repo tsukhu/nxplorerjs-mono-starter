@@ -18,7 +18,7 @@ This is a mono repo version of the [nxplorer js microservice project](https://gi
 ### Installation
 
 ```bash
-yarn install
+yarn bootstrap
 ```
 
 - Production build
