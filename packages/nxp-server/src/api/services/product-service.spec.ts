@@ -1,5 +1,5 @@
 import IProduct from '../interfaces/iproduct';
-import { setupContainer } from '../../config/ioc_config';
+import { IOCContainer } from '../../config/ioc-container';
 import { APP_SERVICE_IDENTIFIER } from '../constants/identifiers';
 import {
   BaseProduct,
@@ -12,7 +12,7 @@ import '../../env';
 describe('Product/Shop Service Tests', () => {
   let productService: IProduct;
   beforeEach(() => {
-    const container = setupContainer();
+    const container = IOCContainer.getInstance().getContainer();
     productService = container.get<IProduct>(APP_SERVICE_IDENTIFIER.PRODUCT);
   });
 

@@ -1,4 +1,4 @@
-import { setupContainer } from '../../config/ioc_config';
+import { IOCContainer } from '../../config/ioc-container';
 import { APP_SERVICE_IDENTIFIER } from '../constants/identifiers';
 import '../../env';
 
@@ -9,7 +9,7 @@ describe('Starwars Service Tests', () => {
   let starWarsService: IStarwars;
   const testTimeOut = +process.env.TEST_TIME_OUT;
   beforeEach(() => {
-    const container = setupContainer();
+    const container = IOCContainer.getInstance().getContainer();
     starWarsService = container.get<IStarwars>(APP_SERVICE_IDENTIFIER.STARWARS);
   });
 

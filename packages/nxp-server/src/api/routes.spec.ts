@@ -6,10 +6,10 @@ import {
   ILogger,
   configHystrix
 } from '@nxp/nxp-core';
-import { setupContainer } from '../config/ioc_config';
+import { IOCContainer } from '../config/ioc-container';
 import * as path from 'path';
 
-const container = setupContainer();
+const container = IOCContainer.getInstance().getContainer();
 const logger = container.get<ILogger>(SERVICE_IDENTIFIER.LOGGER);
 const app = new ExpressServer(
   container,
