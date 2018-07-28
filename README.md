@@ -45,6 +45,19 @@ yarn test
 yarn itest
 ```
 
+- Lint
+
+```bash
+yarn lint
+```
+
+- Serve production build
+- You need to first
+
+```bash
+yarn serve
+```
+
 ## Adding new dependencies to workspaces
 
 ```bash

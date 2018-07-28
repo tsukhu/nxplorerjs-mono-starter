@@ -14,6 +14,7 @@
     "start": "lerna run start --stream",
     "prepare": "lerna run prepare --stream",
     "clean": "lerna run clean --stream",
+    "serve": "lerna run serve --stream",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check":
       "npm run prettier:base -- --list-different \"packages/**/*.{ts,tsx}\"",
