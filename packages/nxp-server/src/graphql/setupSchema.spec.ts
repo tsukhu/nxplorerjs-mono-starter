@@ -2,7 +2,7 @@
 // intellisense to work for jest types
 import { graphql } from 'graphql';
 
-import '../common/env';
+import '../env';
 import { fetchPeople } from './dataloader/starwars';
 import { setupSchema } from './setupSchema';
 
