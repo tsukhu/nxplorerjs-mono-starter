@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/ERS-HCL/nxplorerjs-mono-starter.svg?branch=master)](https://travis-ci.org/ERS-HCL/nxplorerjs-mono-starter)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
-[![Dependency Status](https://david-dm.org/ERS-HCL/nxplorerjs-mono-starter.svg)](https://david-dm.org/ERS-HCL/nxplorerjs-mono-starter)
 [![DeepScan grade](https://deepscan.io/api/projects/2898/branches/21962/badge/grade.svg)](https://deepscan.io/dashboard#view=project&pid=2898&bid=21962)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
