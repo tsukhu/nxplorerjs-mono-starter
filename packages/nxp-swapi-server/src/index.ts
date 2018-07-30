@@ -1,6 +1,6 @@
 import 'source-map-support/register';
 import './env';
-import { ApolloServer, Config } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
 import { getGraphQLConfig } from './config/graphql';
 import * as express from 'express';
 
