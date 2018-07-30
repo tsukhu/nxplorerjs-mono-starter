@@ -11,7 +11,7 @@ import '../../env';
 
 describe('Product/Shop Service Tests', () => {
   let productService: IProduct;
-  beforeEach(() => {
+  beforeAll(() => {
     const container = IOCContainer.getInstance().getContainer();
     productService = container.get<IProduct>(APP_SERVICE_IDENTIFIER.PRODUCT);
   });

@@ -6,7 +6,7 @@ import '../../env';
 describe('User Service Tests', () => {
   let userService: IUser;
 
-  beforeEach(() => {
+  beforeAll(() => {
     const container = IOCContainer.getInstance().getContainer();
     userService = container.get<IUser>(APP_SERVICE_IDENTIFIER.USER);
   });

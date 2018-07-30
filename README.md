@@ -63,6 +63,14 @@ yarn lint
 yarn serve
 ```
 
+- Bump version
+  - You can bump the version of all packages (together) using the command below
+  - While it is possible to have independent versioning for individual packages. For this project we will keep all of the packages in sync as far as releases and versioning goes.
+
+```bash
+yarn release
+```
+
 ## Adding new dependencies to workspaces
 
 ```bash

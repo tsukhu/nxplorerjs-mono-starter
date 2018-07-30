@@ -56,11 +56,16 @@ describe('Example Service Tests', () => {
       const contextValue = {
         peopleLoader
       };
-      graphql(setupSchema(), query, rootValue, contextValue).then(result => {
-        const { people } = result.data;
-        expect(people.name).toEqual(expectedValue);
-        done();
-      });
+      graphql(setupSchema(), query, rootValue, contextValue).then(
+        result => {
+          const { people } = result.data;
+          expect(people.name).toEqual(expectedValue);
+          done();
+        },
+        error => {
+          fail(error);
+        }
+      );
     },
     testTimeOut
   );
