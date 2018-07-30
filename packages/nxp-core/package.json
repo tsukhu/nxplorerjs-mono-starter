@@ -1,7 +1,7 @@
 {
   "name": "@nxp/nxp-core",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Core Platform Module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -9,8 +9,12 @@
     "clean": "rimraf lib",
     "prepare": "yarn run clean && yarn run build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "express",
+    "graphql",
+    "inversify"
+  ],
+  "author": "Tarun Sukhu (tksukhu@gmail.com)",
   "license": "MIT",
   "devDependencies": {
     "@types/compression": "^0.0.36",
