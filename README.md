@@ -77,8 +77,16 @@ yarn release
 yarn workspace <workspace name> add <package>
 ```
 
+```bash
+lerna add <package> --scope=<scope>
+```
+
 - Example of adding node-fetch to @nxp/nxp-server
 
 ```bash
 yarn workspace @nxp/nxp-server add node-fetch
+```
+
+```bash
+lerna add node-fetch --scope=@nxp/nxp-server
 ```

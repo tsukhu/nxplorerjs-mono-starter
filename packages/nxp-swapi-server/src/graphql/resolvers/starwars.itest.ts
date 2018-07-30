@@ -5,7 +5,7 @@ import '../../env';
 describe('StarWars API Test', () => {
   beforeAll(() => {
     this.test = tester({
-      url: `http://127.0.0.1:3000/graphql`,
+      url: `http://127.0.0.1:4000/graphql`,
       contentType: 'application/json'
     });
   });

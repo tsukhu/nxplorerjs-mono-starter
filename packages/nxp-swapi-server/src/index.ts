@@ -2,23 +2,18 @@ import 'source-map-support/register';
 import './env';
 import { ApolloServer, Config } from 'apollo-server-express';
 import { getGraphQLConfig } from './config/graphql';
-import { IOCContainer } from './config/ioc-container';
-import * as path from 'path';
-import * as os from 'os';
-import * as http from 'http';
+import * as express from 'express';
 
-// Single Node execution
-// tslint:disable:no-console
-const welcome = port =>
-  console.log(
-    `up and running in ${process.env.NODE_ENV ||
-      'development'} @: ${os.hostname()} on port: ${port}`
-  );
+const PORT = 4000;
 
 export const setupServer = () => {
   // create server
-  const container = IOCContainer.getInstance().getContainer();
-  const graphqlConfig: Config = getGraphQLConfig();
+  const app = express();
+  const server = new ApolloServer(getGraphQLConfig());
+  server.applyMiddleware({ app });
+  app.listen({ port: PORT }, () =>
+    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+  );
 };
 
 setupServer();
