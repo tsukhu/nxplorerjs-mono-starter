@@ -1,0 +1,2 @@
+# import * from "./starwars.graphql"
+# import Query.* from './queries.graphql'

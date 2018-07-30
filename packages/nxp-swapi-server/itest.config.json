@@ -1,0 +1,8 @@
+{
+  "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  },
+  "testMatch": ["**/src/**/*.itest.(ts)"],
+  "testEnvironment": "node"
+}

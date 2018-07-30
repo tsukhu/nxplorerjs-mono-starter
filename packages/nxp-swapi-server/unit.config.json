@@ -1,0 +1,15 @@
+{
+  "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  },
+  "testMatch": ["**/src/**/*.spec.(ts)"],
+  "testEnvironment": "node",
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "**/src/**/*.{ts}",
+    "!**/src/**/*.itest.{ts}",
+    "!**/node_modules/**",
+    "!**/build/**"
+  ]
+}

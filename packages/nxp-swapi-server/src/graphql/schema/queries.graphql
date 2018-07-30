@@ -1,0 +1,24 @@
+type Query {
+  peopleWithPlanet(id: Int!): PeopleWithPlanetType
+  """
+  Starwars people API call using Dataloader
+  """
+  people(id: Int!): PeopleType
+  """
+  Starwars people API call using REST DataSource
+  """
+  peopleDS(id: Int!): PeopleType
+  """
+  Starwars people batch API call using Dataloader
+  """
+  peopleList(keys: [Int]): [PeopleType]
+  peopleMock: PeopleType
+  """
+  Starwars planet API call using Dataloader
+  """
+  planet(id: Int!): PlanetType
+  """
+  Starwars starship API call using Dataloader
+  """
+  starship(id: Int!): StarshipType
+}
