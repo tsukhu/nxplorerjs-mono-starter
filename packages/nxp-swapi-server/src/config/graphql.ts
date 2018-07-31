@@ -65,6 +65,7 @@ export const getGraphQLConfig = (): Config => {
     formatError, // Error Handler
     tracing,
     playground,
+    uploads: false,
     introspection: true,
     context: async ({ req, connection }) => {
       if (connection) {

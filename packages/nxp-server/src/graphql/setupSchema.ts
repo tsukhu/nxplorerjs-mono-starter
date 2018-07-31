@@ -2,11 +2,16 @@ import { gql } from 'apollo-server-express';
 import {
   PubSub,
   addMockFunctionsToSchema,
-  makeExecutableSchema
+  makeExecutableSchema,
+  makeRemoteExecutableSchema,
+  mergeSchemas,
+  introspectSchema
 } from 'apollo-server';
 import { importSchema } from 'graphql-import';
 import { GraphQLSchema } from 'graphql/type/schema';
 import { merge } from 'lodash';
+import { HttpLink } from 'apollo-link-http';
+import fetch from 'node-fetch';
 import AuthDirective from './directives/authDirective';
 import FormattableDateDirective from './directives/formattableDate';
 import mocks from './mocks';
@@ -20,6 +25,17 @@ import {
 export const pubsub = new PubSub();
 
 const typeDefs = gql(importSchema('src/graphql/schema/main.graphql'));
+const link = new HttpLink({ uri: 'http://localhost:4000/graphql', fetch });
+
+export const setupRemoteSchema = async () => {
+  const schema = await introspectSchema(link);
+  const executableSchema = makeRemoteExecutableSchema({
+    schema,
+    link
+  });
+
+  return executableSchema;
+};
 
 // Merge all the resolvers
 const resolvers = merge(
@@ -35,6 +51,19 @@ const schemaDirectives = {
 };
 
 export { mocks, schemaDirectives, resolvers, typeDefs };
+
+export const getMergedSchemas = async () => {
+  const localSchema = setupSchema();
+  try {
+    const remoteSchema = await setupRemoteSchema();
+    return mergeSchemas({
+      schemas: [localSchema, remoteSchema]
+    });
+  } catch (e) {
+    console.log('Remote Schema error' + e);
+    return localSchema;
+  }
+};
 
 // Create GraphQL Schema with all the pieces in place
 export const setupSchema = (): GraphQLSchema => {

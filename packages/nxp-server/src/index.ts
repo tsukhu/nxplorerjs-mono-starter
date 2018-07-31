@@ -22,7 +22,7 @@ const welcome = port =>
       'development'} @: ${os.hostname()} on port: ${port}`
   );
 
-export const setupServer = () => {
+export const setupServer = async () => {
   // create server
   const container = IOCContainer.getInstance().getContainer();
   const logger = container.get<ILogger>(SERVICE_IDENTIFIER.LOGGER);
@@ -33,7 +33,8 @@ export const setupServer = () => {
   )
     .getServer()
     .build();
-  const graphqlConfig: Config = getGraphQLConfig();
+  // Get Stiched Schema
+  const graphqlConfig: Config = await getGraphQLConfig();
   const apolloServer: ApolloServer = createApolloServer(app, graphqlConfig);
   // Create Server so that it can be reused for the
   // configuring the SubscriptionServer

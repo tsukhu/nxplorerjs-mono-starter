@@ -5,7 +5,8 @@ import {
   mocks,
   resolvers,
   schemaDirectives,
-  typeDefs
+  typeDefs,
+  getMergedSchemas
 } from '../graphql/setupSchema';
 
 // Tracing Configuration
@@ -15,7 +16,7 @@ const tracing =
     ? true
     : false;
 
-export const getGraphQLConfig = (): Config => {
+export const getGraphQLConfig = async (): Promise<Config> => {
   const getuser = req => {
     if (process.env.JWT_AUTH === 'true') {
       return req.user ? req.user : Promise.resolve('');
@@ -33,16 +34,14 @@ export const getGraphQLConfig = (): Config => {
     process.env.GRAPHQL_MOCK === 'true'
       ? mocks
       : false;
-
   return {
-    typeDefs,
-    resolvers,
     cache: new InMemoryLRUCache({ maxSize: 100 }),
-    schemaDirectives,
+    schema: await getMergedSchemas(),
     mocks: serverMocks,
     formatError, // Error Handler
     tracing,
     playground,
+    uploads: false,
     introspection: true,
     context: async ({ req, connection }) => {
       if (connection) {
