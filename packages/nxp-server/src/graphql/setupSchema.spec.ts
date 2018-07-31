@@ -6,7 +6,6 @@ import '../env';
 import { setupSchema } from './setupSchema';
 
 describe('Example Service Tests', () => {
-  const testTimeOut = +process.env.TEST_TIMEOUT;
   it('should be returning a quote ', done => {
     const query = `
         query Q {

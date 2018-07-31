@@ -1,13 +1,7 @@
 import { formatError } from 'apollo-errors';
 import { InMemoryLRUCache } from 'apollo-server-caching';
 import { Config } from 'apollo-server-core';
-import {
-  mocks,
-  resolvers,
-  schemaDirectives,
-  typeDefs,
-  getMergedSchemas
-} from '../graphql/setupSchema';
+import { mocks, getMergedSchemas } from '../graphql/setupSchema';
 
 // Tracing Configuration
 const tracing =
