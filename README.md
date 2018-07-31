@@ -20,6 +20,8 @@ This is a mono repo version of the [nxplorer js microservice project](https://gi
   - Sets up the REST APIS, Application Services and GraphQL business API implementation
   - This graphql server has a local and remote schema (nxp-swapi-server) stitched together.
 
+<img src="assets/overview.png" height="400px" alt="workspace overview">
+
 ## Setup
 
 - Execute these commands from the root directory
