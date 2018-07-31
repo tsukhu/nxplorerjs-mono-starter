@@ -23,9 +23,12 @@ import {
 } from './resolvers';
 
 export const pubsub = new PubSub();
-
+const swapiPort = process.env.SWAPI_SERVER_PORT || 4000;
 const typeDefs = gql(importSchema('src/graphql/schema/main.graphql'));
-const link = new HttpLink({ uri: 'http://localhost:4000/graphql', fetch });
+const link = new HttpLink({
+  uri: `http://localhost:${swapiPort}/graphql`,
+  fetch
+});
 
 export const setupRemoteSchema = async () => {
   const schema = await introspectSchema(link);

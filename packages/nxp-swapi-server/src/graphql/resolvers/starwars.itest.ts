@@ -2,10 +2,12 @@
 import { tester } from 'graphql-tester';
 import '../../env';
 
+const port = process.env.PORT || 4000;
+
 describe('StarWars API Test', () => {
   beforeAll(() => {
     this.test = tester({
-      url: `http://127.0.0.1:4000/graphql`,
+      url: `http://127.0.0.1:${port}/graphql`,
       contentType: 'application/json'
     });
   });

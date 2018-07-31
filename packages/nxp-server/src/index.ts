@@ -13,6 +13,7 @@ import { IOCContainer } from './config/ioc-container';
 import * as path from 'path';
 import * as os from 'os';
 import * as http from 'http';
+import * as ProgressBar from 'progress';
 
 // Single Node execution
 // tslint:disable:no-console
@@ -23,9 +24,13 @@ const welcome = port =>
   );
 
 export const setupServer = async () => {
-  // create server
+  const bar = new ProgressBar(':current :token', { total: 4 });
+  // initialize the IOC container (1)
   const container = IOCContainer.getInstance().getContainer();
   const logger = container.get<ILogger>(SERVICE_IDENTIFIER.LOGGER);
+  const serverPort = process.env.PORT || 3000;
+  bar.tick({ token: 'initialized Container\n' });
+  // create the inversify enabled express server (2)
   const app = new ExpressServer(
     container,
     logger,
@@ -33,8 +38,11 @@ export const setupServer = async () => {
   )
     .getServer()
     .build();
-  // Get Stiched Schema
+  bar.tick({ token: 'created inversify enabled express server\n' });
+  // Get Stiched Schema (3)
   const graphqlConfig: Config = await getGraphQLConfig();
+  bar.tick({ token: 'created graphql schema\n' });
+  // Create the apollo server
   const apolloServer: ApolloServer = createApolloServer(app, graphqlConfig);
   // Create Server so that it can be reused for the
   // configuring the SubscriptionServer
@@ -43,8 +51,10 @@ export const setupServer = async () => {
   if (process.env.GRAPHQL_SUBSCRIPTIONS === 'true') {
     apolloServer.installSubscriptionHandlers(ws);
   }
+
   // console.log(apolloServer.subscriptionsPath);
-  ws.listen(process.env.PORT, err => {
+  // start listening to the requrests (5)
+  ws.listen(serverPort, err => {
     if (err) {
       throw new Error(err);
     }
@@ -53,8 +63,8 @@ export const setupServer = async () => {
       // configure Hystrix Support
       configHystrix();
     }
-
-    welcome(process.env.PORT);
+    bar.tick({ token: 'startup complete\n' });
+    welcome(serverPort);
   });
 };
 

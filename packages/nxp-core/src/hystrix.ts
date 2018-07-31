@@ -8,6 +8,7 @@ import * as http from 'http';
 export const configHystrix = () => {
   if (process.env.STREAM_HYSTRIX === 'true') {
     const globalStats = Brakes.getGlobalStats();
+    const hystrixPort = process.env.HYSTRIX_PORT || 3001;
     http
       .createServer((req, res) => {
         res.setHeader('Content-Type', 'text/event-stream;charset=UTF-8');
@@ -18,9 +19,9 @@ export const configHystrix = () => {
         res.setHeader('Pragma', 'no-cache');
         globalStats.getHystrixStream().pipe(res);
       })
-      .listen(3001, () => {
+      .listen(hystrixPort, () => {
         console.log('---------------------');
-        console.log('Hystrix Stream now live at localhost:3001/hystrix.stream');
+        console.log(`Hystrix Stream now live at localhost:${hystrixPort}/hystrix.stream`);
         console.log('---------------------');
       });
   }
