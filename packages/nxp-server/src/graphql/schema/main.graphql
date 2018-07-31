@@ -1,4 +1,3 @@
-# import * from "./starwars.graphql"
 # import * from "./example.graphql"
 # import * from "./user.graphql"
 # import * from "./movie.graphql"

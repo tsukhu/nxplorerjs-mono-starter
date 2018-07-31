@@ -14,7 +14,6 @@ import {
   BlogResolver,
   ExampleResolver,
   MovieResolver,
-  StarwarsResolver,
   UserResolver
 } from './resolvers';
 
@@ -25,7 +24,6 @@ const typeDefs = gql(importSchema('src/graphql/schema/main.graphql'));
 // Merge all the resolvers
 const resolvers = merge(
   ExampleResolver,
-  StarwarsResolver,
   UserResolver,
   MovieResolver,
   BlogResolver
