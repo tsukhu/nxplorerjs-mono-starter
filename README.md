@@ -12,9 +12,13 @@ This is a mono repo version of the [nxplorer js microservice project](https://gi
 - **@nxp/nxp-core** (Core Platform)
   - The platform module which does all the configuration and setup of the server express server and GraphQL server
   - It also configures the platform components like logging, monitoring, security , IOC container
-- **@nxp/nxp-server** (Application)
+- **@nxp/nxp-swapi-server** (Application - SWAPI GraphQL Server)
+  - This depends on @nxp/nxp-core for all the platform requirements
+  - Sets up the SWAPI GraphQL business API implementation
+- **@nxp/nxp-server** (Application - API Gateway/REST/GraphQL server)
   - This depends on @nxp/nxp-core for all the platform requirements
   - Sets up the REST APIS, Application Services and GraphQL business API implementation
+  - This graphql server has a local and remote schema (nxp-swapi-server) stitched together.
 
 ## Setup
 
@@ -57,7 +61,9 @@ yarn lint
 ```
 
 - Serve production build
-- You need to first
+  - This will start 2 servers
+  1.  The SWAPI GraphQL Server at port 4000
+  2.  The Main Gateway Server at port 3000 . All the REST APIS and GraphQL APIs are accessible on the gateway.
 
 ```bash
 yarn serve
