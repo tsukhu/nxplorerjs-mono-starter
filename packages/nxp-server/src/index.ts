@@ -24,12 +24,16 @@ const welcome = port =>
   );
 
 export const setupServer = async () => {
-  const bar = new ProgressBar(':current :token', { total: 4 });
+  const bar = new ProgressBar('Server Startup [:bar] :percent :elapseds', {
+    total: 5
+  });
+
   // initialize the IOC container (1)
+  bar.tick();
   const container = IOCContainer.getInstance().getContainer();
   const logger = container.get<ILogger>(SERVICE_IDENTIFIER.LOGGER);
   const serverPort = process.env.PORT || 3000;
-  bar.tick({ token: 'initialized Container\n' });
+  bar.tick();
   // create the inversify enabled express server (2)
   const app = new ExpressServer(
     container,
@@ -38,10 +42,10 @@ export const setupServer = async () => {
   )
     .getServer()
     .build();
-  bar.tick({ token: 'created inversify enabled express server\n' });
+  bar.tick();
   // Get Stiched Schema (3)
   const graphqlConfig: Config = await getGraphQLConfig();
-  bar.tick({ token: 'created graphql schema\n' });
+  bar.tick();
   // Create the apollo server
   const apolloServer: ApolloServer = createApolloServer(app, graphqlConfig);
   // Create Server so that it can be reused for the
@@ -63,7 +67,7 @@ export const setupServer = async () => {
       // configure Hystrix Support
       configHystrix();
     }
-    bar.tick({ token: 'startup complete\n' });
+    bar.tick();
     welcome(serverPort);
   });
 };

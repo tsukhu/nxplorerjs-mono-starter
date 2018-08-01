@@ -63,7 +63,7 @@ export const getMergedSchemas = async () => {
       schemas: [localSchema, remoteSchema]
     });
   } catch (e) {
-    console.log('Remote Schema error' + e);
+    console.log('\nRemote Schema error' + e);
     return localSchema;
   }
 };
