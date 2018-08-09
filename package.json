@@ -1,6 +1,6 @@
 {
   "name": "nxplorerjs-micro-starter",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Express Microservice Starter Mono Repo",
   "main": "index.js",
   "author": "Tarun Kumar Sukhu <tksukhu@gmail.com>",
@@ -28,12 +28,12 @@
   "devDependencies": {
     "awesome-typescript-loader": "4.0.1",
     "backpack-core": "^0.7.0",
-    "lerna": "^2.11.0",
-    "prettier": "^1.13.7",
+    "lerna": "^3.0.0-rc.0",
+    "prettier": "^1.14.2",
     "rimraf": "^2.6.2",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.14.0",
-    "tslint-config-standard": "^7.0.0",
+    "tslint-config-standard": "^7.1.0",
     "typedoc": "^0.11.1",
     "typedoc-webpack-plugin": "^1.1.4",
     "typescript": "^3.0.1"

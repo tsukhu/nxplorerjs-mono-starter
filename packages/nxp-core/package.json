@@ -1,6 +1,6 @@
 {
   "name": "@nxp/nxp-core",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Core Platform Module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -21,8 +21,8 @@
     "@types/express": "^4.16.0"
   },
   "dependencies": {
-    "apollo-server": "2.1.0-alpha.8",
-    "apollo-server-express": "2.1.0-alpha.8",
+    "apollo-server": "^2.1.0-alpha.10",
+    "apollo-server-express": "^2.1.0-alpha.10",
     "brakes": "^2.6.0",
     "compression": "^1.7.3",
     "cookie-parser": "^1.4.3",
@@ -35,7 +35,7 @@
     "helmet": "^3.13.0",
     "inversify": "^4.13.0",
     "inversify-express-utils": "^6.1.0",
-    "pino": "^4.17.5",
+    "pino": "^5.0.0",
     "prom-client": "^11.1.1",
     "reflect-metadata": "^0.1.12",
     "response-time": "^2.3.2",
