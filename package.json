@@ -8,7 +8,7 @@
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {
-    "bootstrap": "lerna bootstrap --stream",
+    "bootstrap": "lerna bootstrap",
     "test": "lerna run test --stream",
     "itest": "lerna run itest --stream",
     "start": "lerna run start --stream",
