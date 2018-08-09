@@ -10,12 +10,17 @@
     "compile": "cross-env NODE_ENV=production node build.js && backpack build",
     "start": "cross-env NODE_ENV=development node build.js && backpack dev",
     "serve": "node build/main.js",
-    "dev:debug": "cross-env NODE_ENV=development node build.js && cross-env DEBUG=express:* backpack dev",
+    "dev:debug":
+      "cross-env NODE_ENV=development node build.js && cross-env DEBUG=express:* backpack dev",
     "dash": "nodejs-dashboard -- node -r nodejs-dashboard build/main",
-    "test": "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json --detectOpenHandles",
-    "test:dev": "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json --detectOpenHandles",
-    "itest:build": "cross-env NODE_ENV=test node build.js && cross-env NODE_ENV=test backpack build",
-    "itest:run": "concurrent --kill-others --success first \"cd build && node main\" \"wait-port localhost:4000 && jest --forceExit --config itest.config.json\"",
+    "test":
+      "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
+    "test:dev":
+      "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
+    "itest:build":
+      "cross-env NODE_ENV=test node build.js && cross-env NODE_ENV=test backpack build",
+    "itest:run":
+      "concurrent --kill-others --success first \"cd build && node main\" \"wait-port localhost:4000 && jest --forceExit --config itest.config.json\"",
     "itest": "yarn itest:build && yarn itest:run",
     "wait-port": "wait-port",
     "jest": "jest --config unit.config.json"
