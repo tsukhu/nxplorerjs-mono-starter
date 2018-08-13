@@ -52,18 +52,18 @@
     "progress": "^2.0.0",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
-    "rxjs": "^6.2.2",
-    "source-map-support": "^0.5.6"
+    "rxjs": "^6.2.2"
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
     "@types/graphql": "^0.13.4",
     "@types/jest": "^23.3.1",
+    "source-map-support": "^0.5.6",
     "concurrent": "^0.3.2",
     "concurrently": "^3.6.1",
     "cross-env": "^5.2.0",
     "graphql-tester": "^0.0.5",
-    "jest": "^23.4.2",
+    "jest": "^23.5.0",
     "jest-sonar-reporter": "^2.0.0",
     "shelljs": "^0.8.2",
     "supertest": "^3.1.0",
