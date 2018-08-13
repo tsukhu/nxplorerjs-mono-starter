@@ -19,7 +19,7 @@
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"packages/**/*.{ts,tsx}\"",
     "prettier:write": "npm run prettier:base -- --write \"packages/**/*.{ts,tsx}\"",
-    "lint": "npm run tslint -- --force \"packages/**/*.{ts,tsx}\" -e \"**/lib/**\" -e \"**/build/**\"",
+    "lint": "npm run tslint -- --force \"packages/**/*.{ts,tsx}\" -e \"**/lib/**\" -e \"**/build/**\" -e \"**/node_modules/**\"",
     "tslint": "tslint"
   },
   "devDependencies": {
