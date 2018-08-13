@@ -1,4 +1,4 @@
-import { RESTDataSource }  from 'apollo-datasource-rest';
+import { RESTDataSource } from 'apollo-datasource-rest';
 
 class StarwarsAPI extends RESTDataSource {
   constructor() {

@@ -21,7 +21,9 @@ export const configHystrix = () => {
       })
       .listen(hystrixPort, () => {
         console.log('---------------------');
-        console.log(`Hystrix Stream now live at localhost:${hystrixPort}/hystrix.stream`);
+        console.log(
+          `Hystrix Stream now live at localhost:${hystrixPort}/hystrix.stream`
+        );
         console.log('---------------------');
       });
   }

@@ -33,5 +33,4 @@ describe('Example Service Tests', () => {
       done();
     });
   });
-
 });

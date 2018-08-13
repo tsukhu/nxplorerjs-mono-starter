@@ -1,6 +1,6 @@
 {
   "name": "@nxp/nxp-swapi-server",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "swapi microservice (business apis)",
   "main": "build/index.js",
   "scripts": {
@@ -10,17 +10,12 @@
     "compile": "cross-env NODE_ENV=production node build.js && backpack build",
     "start": "cross-env NODE_ENV=development node build.js && backpack dev",
     "serve": "node build/main.js",
-    "dev:debug":
-      "cross-env NODE_ENV=development node build.js && cross-env DEBUG=express:* backpack dev",
+    "dev:debug": "cross-env NODE_ENV=development node build.js && cross-env DEBUG=express:* backpack dev",
     "dash": "nodejs-dashboard -- node -r nodejs-dashboard build/main",
-    "test":
-      "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
-    "test:dev":
-      "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
-    "itest:build":
-      "cross-env NODE_ENV=test node build.js && cross-env NODE_ENV=test backpack build",
-    "itest:run":
-      "concurrent --kill-others --success first \"cd build && node main\" \"wait-port localhost:4000 && jest --forceExit --config itest.config.json\"",
+    "test": "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
+    "test:dev": "cross-env NODE_ENV=test node build.js && jest --forceExit --config unit.config.json",
+    "itest:build": "cross-env NODE_ENV=test node build.js && cross-env NODE_ENV=test backpack build",
+    "itest:run": "concurrent --kill-others --success first \"cd build && node main\" \"wait-port localhost:4000 && jest --forceExit --config itest.config.json\"",
     "itest": "yarn itest:build && yarn itest:run",
     "wait-port": "wait-port",
     "jest": "jest --config unit.config.json"
@@ -29,7 +24,7 @@
   "author": "Tarun Sukhu(tksukhu@gmail.com)",
   "license": "MIT",
   "dependencies": {
-    "@nxp/nxp-core": "^1.1.1",
+    "@nxp/nxp-core": "^1.1.2",
     "apollo-datasource-rest": "^0.1.0",
     "apollo-errors": "1.9.0",
     "apollo-server": "2.1.0-alpha.8",
@@ -59,13 +54,13 @@
     "@types/graphql": "^0.13.3",
     "@types/jest": "^23.3.0",
     "concurrent": "^0.3.2",
-    "source-map-support": "^0.5.6",
     "concurrently": "^3.6.1",
     "cross-env": "^5.2.0",
     "graphql-tester": "^0.0.5",
     "jest": "^23.5.0",
     "jest-sonar-reporter": "^2.0.0",
     "shelljs": "^0.8.2",
+    "source-map-support": "^0.5.6",
     "supertest": "^3.1.0",
     "ts-jest": "^23.0.1",
     "ts-node": "^7.0.0",
