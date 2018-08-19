@@ -25,10 +25,10 @@
   "license": "MIT",
   "dependencies": {
     "@nxp/nxp-core": "^1.1.2",
-    "apollo-datasource-rest": "^0.1.0",
+    "apollo-datasource-rest": "^2.0.0-rc.8",
     "apollo-errors": "1.9.0",
-    "apollo-server": "2.1.0-alpha.8",
-    "apollo-server-express": "2.1.0-alpha.8",
+    "apollo-server": "2.1.0-alpha.10",
+    "apollo-server-express": "2.1.0-alpha.10",
     "casual": "^1.5.19",
     "cross-var": "^1.1.0",
     "dataloader": "^1.4.0",
