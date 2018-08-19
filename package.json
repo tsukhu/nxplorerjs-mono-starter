@@ -1,6 +1,6 @@
 {
   "name": "nxplorerjs-micro-starter",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Express Microservice Starter Mono Repo",
   "main": "index.js",
   "author": "Tarun Kumar Sukhu <tksukhu@gmail.com>",
