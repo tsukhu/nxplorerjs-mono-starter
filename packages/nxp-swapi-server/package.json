@@ -39,7 +39,7 @@
     "faker": "^4.1.0",
     "graphql": "^14.0.2",
     "graphql-import": "^0.6.0",
-    "graphql-request": "^0.7.1",
+    "graphql-request": "^1.8.2",
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.1.0",
     "jsonwebtoken": "^8.3.0",

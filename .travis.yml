@@ -3,16 +3,16 @@ sudo: required
 services:
   - docker
 node_js:
-  - "lts/carbon"
+  - 'lts/carbon'
 jobs:
   include:
     - stage: unit
       script:
-        - yarn bootstrap
+        - yarn
         - yarn test
     - stage: itest
       script:
-        - yarn bootstrap
+        - yarn
         - yarn itest
     # - stage: package
     #   script:
