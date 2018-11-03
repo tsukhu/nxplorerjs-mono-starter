@@ -8,11 +8,11 @@ jobs:
   include:
     - stage: unit
       script:
-        - yarn
+        - yarn bootstrap
         - yarn test
     - stage: itest
       script:
-        - yarn
+        - yarn bootstrap
         - yarn itest
     # - stage: package
     #   script:
